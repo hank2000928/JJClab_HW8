@@ -77,3 +77,13 @@
 <img width="1245" height="375" alt="image" src="https://github.com/user-attachments/assets/8440114a-9413-466c-b16b-df77f58d1d96" />
 
 ## g04、g05安裝
+為避免影響正在運算的jobs，確認g04的dry-run只需要安裝procmail sysstat，再開始安裝。
+<img width="1312" height="578" alt="image" src="https://github.com/user-attachments/assets/535b900c-68a0-4032-aec1-1d91b0062575" />
+<img width="1910" height="466" alt="image" src="https://github.com/user-attachments/assets/f9e9bb8f-cb2e-486a-8bac-66fc272eadb5" />
+安裝後驗證:  
+<img width="1257" height="884" alt="image" src="https://github.com/user-attachments/assets/28a09607-4e8a-4495-9500-6fa819f3fff1" />
+
+重複步驟執行於g05:  
+<img width="1669" height="686" alt="image" src="https://github.com/user-attachments/assets/4817c293-e22b-41e6-8a4a-52e3ad000148" />
+<img width="1913" height="580" alt="image" src="https://github.com/user-attachments/assets/3f5d47ca-ac2c-444f-987a-7752e7465795" />
+<img width="1240" height="665" alt="image" src="https://github.com/user-attachments/assets/60441135-2af4-4cb3-83fb-8333abdc2c55" />

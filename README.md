@@ -67,3 +67,13 @@
 <img width="1664" height="809" alt="image" src="https://github.com/user-attachments/assets/23d4fb07-4e6b-4170-9846-3c64b8a74294" />
 <img width="1604" height="809" alt="image" src="https://github.com/user-attachments/assets/5ad3c744-7df4-4055-9102-874697e12c01" />
 
+## g06用量測試
+因為上次上課(9/19)，學長已安裝g06的sysstat，可以進行觀察:  
+<img width="858" height="48" alt="image" src="https://github.com/user-attachments/assets/d96c53da-39cc-4dc7-a5b8-90f7280c9004" />
+上圖是昨天每10分鐘統計的平均用量，%idle為100%-52.28%=47.42%  
+
+下圖則是9/19~9/30的用量，或以script修飾:  
+<img width="1324" height="556" alt="image" src="https://github.com/user-attachments/assets/c2b20ae9-e4c9-4f0f-b0f1-0c4d7431cfee" />
+<img width="1245" height="375" alt="image" src="https://github.com/user-attachments/assets/8440114a-9413-466c-b16b-df77f58d1d96" />
+
+## g04、g05安裝

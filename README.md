@@ -1,0 +1,16 @@
+# JJClab_HW8
+裝 sysstat 觀察一周使用量
+----------------------------------
+清點214內的node:  
+<img width="508" height="743" alt="image" src="https://github.com/user-attachments/assets/23be8fb9-32a5-4649-a2b0-55b751401fec" />
+
+先登入其中一個node(e11)，確認sysstat is not installed:   
+<img width="549" height="108" alt="image" src="https://github.com/user-attachments/assets/85e019d8-85a9-4be3-8f14-d8ecb40f292f" />
+<img width="619" height="388" alt="image" src="https://github.com/user-attachments/assets/ecb5e90e-1527-4972-8077-3ff441e3d047" />
+
+確認版本為SLE-15-SP2，dry-run測試:  
+<img width="1915" height="642" alt="image" src="https://github.com/user-attachments/assets/9ffbcc7d-a4e1-4729-8bbc-8d398e0e2733" />
+
+正式安裝，並確認歷史資料收集功能:  
+<img width="1915" height="704" alt="image" src="https://github.com/user-attachments/assets/c7eaaabd-b4fa-492f-a453-6458ae760348" />
+<img width="1229" height="647" alt="image" src="https://github.com/user-attachments/assets/576bd1b8-7443-4be5-b730-529ef2197541" />

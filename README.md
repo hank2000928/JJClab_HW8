@@ -18,11 +18,11 @@
 查看實際採樣頻率，確認歷史檔可讀後，確認資料保存期限:  
 <img width="1092" height="757" alt="image" src="https://github.com/user-attachments/assets/1ae3c639-79f4-4ea5-b560-522b2207dde4" />
 目前可確認:  
-| 資訊|意義 |
+| | |
 | --| -- |
-|sa1  |→ 每 10 分鐘收原始資料|
-|sa2  |→ 每 6 小時整理/產生報告|
-|HISTORY=60 |→ 歷史 activity data 保留 60 天|
-|COMPRESSAFTER=10 |→ 超過 10 天的歷史檔案會進入壓縮處理|
-|SADC_OPTIONS="-S ALL"| → 還可以分析 memory、disk、network 等項目。|
-|SA_DIR=/var/log/sa| → 資料保存位置|
+|sa1  |每 10 分鐘收原始資料|
+|sa2  |每 6 小時整理/產生報告|
+|HISTORY=60 |歷史 activity data 保留 60 天|
+|COMPRESSAFTER=10 |超過 10 天的歷史檔案會進入壓縮處理|
+|SADC_OPTIONS="-S ALL"| 還可以分析 memory、disk、network 等項目。|
+|SA_DIR=/var/log/sa| 資料保存位置|

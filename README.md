@@ -37,32 +37,32 @@
 ## 測試批次安裝
 確認e09、e15版本相同，則用以下script安裝: 
 
-for n in e09 e15; do
-    echo "===== Installing sysstat on $n ====="
-
-    ssh "$n" '
-        if rpm -q sysstat >/dev/null 2>&1; then
-            echo "[OK] sysstat already installed"
-        else
-            zypper -n in --from Module-Basesystem sysstat
-        fi
-
-        systemctl enable --now sysstat
-
-        echo "--- version ---"
-        rpm -q sysstat
-
-        echo "--- service ---"
-        systemctl is-enabled sysstat
-
-        echo "--- cron ---"
-        grep -v "^#" /etc/cron.d/sysstat | grep -v "^$"
-
-        echo "--- history ---"
-        grep -E "^(HISTORY|COMPRESSAFTER|SADC_OPTIONS|SA_DIR)" \
-            /etc/sysstat/sysstat
-    '
-done  
+    for n in e09 e15; do
+        echo "===== Installing sysstat on $n ====="
+    
+        ssh "$n" '
+            if rpm -q sysstat >/dev/null 2>&1; then
+                echo "[OK] sysstat already installed"
+            else
+                zypper -n in --from Module-Basesystem sysstat
+            fi
+    
+            systemctl enable --now sysstat
+    
+            echo "--- version ---"
+            rpm -q sysstat
+    
+            echo "--- service ---"
+            systemctl is-enabled sysstat
+    
+            echo "--- cron ---"
+            grep -v "^#" /etc/cron.d/sysstat | grep -v "^$"
+    
+            echo "--- history ---"
+            grep -E "^(HISTORY|COMPRESSAFTER|SADC_OPTIONS|SA_DIR)" \
+                /etc/sysstat/sysstat
+        '
+    done  
 <img width="942" height="252" alt="image" src="https://github.com/user-attachments/assets/72a61268-f8d7-418d-94e3-ef3135900ab6" />
 <img width="1664" height="809" alt="image" src="https://github.com/user-attachments/assets/23d4fb07-4e6b-4170-9846-3c64b8a74294" />
 <img width="1604" height="809" alt="image" src="https://github.com/user-attachments/assets/5ad3c744-7df4-4055-9102-874697e12c01" />

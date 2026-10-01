@@ -1,10 +1,11 @@
 # JJClab_HW8
 裝 sysstat 觀察一周使用量
 ----------------------------------
+## 安裝測試
 清點214內的node:  
 <img width="508" height="743" alt="image" src="https://github.com/user-attachments/assets/23be8fb9-32a5-4649-a2b0-55b751401fec" />
 
-先登入其中一個node(e11)，確認sysstat is not installed:   
+先登入其中一個閒置node(e11)，確認sysstat is not installed:   
 <img width="549" height="108" alt="image" src="https://github.com/user-attachments/assets/85e019d8-85a9-4be3-8f14-d8ecb40f292f" />
 <img width="619" height="388" alt="image" src="https://github.com/user-attachments/assets/ecb5e90e-1527-4972-8077-3ff441e3d047" />
 
@@ -26,3 +27,43 @@
 |COMPRESSAFTER=10 |超過 10 天的歷史檔案會進入壓縮處理|
 |SADC_OPTIONS="-S ALL"| 還可以分析 memory、disk、network 等項目。|
 |SA_DIR=/var/log/sa| 資料保存位置|
+
+## 列裝所有閒置node
+以e03為例:  
+<img width="919" height="508" alt="image" src="https://github.com/user-attachments/assets/f24bb626-d0d7-4c27-b193-c424270160a4" />
+<img width="1919" height="555" alt="image" src="https://github.com/user-attachments/assets/c458f7c2-749b-43cf-8d76-5b924e710222" />
+<img width="1182" height="582" alt="image" src="https://github.com/user-attachments/assets/ad42acd1-1c27-4020-a68e-9162fff44161" />
+
+## 測試批次安裝
+確認e09、e15版本相同，則用以下script安裝: 
+
+for n in e09 e15; do
+    echo "===== Installing sysstat on $n ====="
+
+    ssh "$n" '
+        if rpm -q sysstat >/dev/null 2>&1; then
+            echo "[OK] sysstat already installed"
+        else
+            zypper -n in --from Module-Basesystem sysstat
+        fi
+
+        systemctl enable --now sysstat
+
+        echo "--- version ---"
+        rpm -q sysstat
+
+        echo "--- service ---"
+        systemctl is-enabled sysstat
+
+        echo "--- cron ---"
+        grep -v "^#" /etc/cron.d/sysstat | grep -v "^$"
+
+        echo "--- history ---"
+        grep -E "^(HISTORY|COMPRESSAFTER|SADC_OPTIONS|SA_DIR)" \
+            /etc/sysstat/sysstat
+    '
+done  
+<img width="942" height="252" alt="image" src="https://github.com/user-attachments/assets/72a61268-f8d7-418d-94e3-ef3135900ab6" />
+<img width="1664" height="809" alt="image" src="https://github.com/user-attachments/assets/23d4fb07-4e6b-4170-9846-3c64b8a74294" />
+<img width="1604" height="809" alt="image" src="https://github.com/user-attachments/assets/5ad3c744-7df4-4055-9102-874697e12c01" />
+

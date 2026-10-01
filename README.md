@@ -18,7 +18,7 @@
 查看實際採樣頻率，確認歷史檔可讀後，確認資料保存期限:  
 <img width="1092" height="757" alt="image" src="https://github.com/user-attachments/assets/1ae3c639-79f4-4ea5-b560-522b2207dde4" />
 目前可確認:  
-
+||保存設定|
 | --| -- |
 |sa1  |每 10 分鐘收原始資料|
 |sa2  |每 6 小時整理/產生報告|
